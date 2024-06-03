@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizzing:border-box;
+                justify-content:center;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            
+            body{
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                background-image:url("https://images.unsplash.com/photo-1560785219-cc81ab373cd3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+                
+              }
+
+            .wrapper{
+                background:transparent;
+                height:50px;
+                width:400px;
+                
+            }
+
+            .input-box input{
+                width:100%;
+                height:100%;
+                background:transparent;
+                border:none;
+                outline:none;
+                border:2px solid rgba(255,255,255,.2);
+                border-radius:40px;
+                font-weight:bold;
+            }
+            
+            .wrapper h1{
+                text-align:center;
+            }
+            .wrapper .btn{
+                width:100%;
+                height:100%;
+                background:transparent;
+                border:none;
+                outline:none;
+                border:2px solid rgba(255,255,255,.2);
+                border-radius:40px;
+                font-weight:bold;
+
+            }
+            p,input{
+                text-align:center;
+                color:white;
+            }
+            
+            h1{
+                color:white;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+        <form method="POST">{% csrf_token %}
+            <h1>REGISTER</h1>
+            
+            {% if messages %}
+              <div class="alert alert-primary" role="alert">
+                {% for message in messages %}
+                 {{message}}
+                {% endfor %}
+              </div>
+              {% endif %}
+            
+            <div class="input-box" ALIGN=center>
+              
+                <input type="text" name="first_name" placeholder="First name">
+                </div><br>
+    
+            <div class="input-box" ALIGN=center>
+               
+                <input type="text" name="last_name" placeholder="Last name">
+                </div><br>
+
+                <div class="input-box" ALIGN=center>
+            
+                    <input type="text" name="username" placeholder="Username">
+                    </div><br>
+
+            <div class="input-box" ALIGN=center>
+            
+            <input type="email" name="email" placeholder="Email">
+            </div><br>
+
+            <div class="input-box" ALIGN=center>
+            
+            <input type="text" name="password" placeholder="Password">
+            </div><br>
+
+            <p>Already have Account! <a href="/login/">login</a></p>
+            <button type="submit" class="btn btn-primary" ALIGN=center style="color:white">Register</button>
+        </form>
+    </div>
+    </body>
+    </html>
